@@ -12,7 +12,7 @@
 
 body {
     background-color: var(--light-grey);
-    padding: 1em; 
+    padding: 1em;
     font-family: "Outfit", sans-serif;
     font-weight: 700;
 }
@@ -32,10 +32,11 @@ body {
     border-radius: 8px;
     border: 2px solid var(--dark-blue);
     transition: transform 1s;
+    text-decoration: none;
+    
 }
 
-.challenge__container__items__item a {
-    text-decoration: none;
+.challenge__container__items__item {
     color: var(--dark-blue);
 }
 
@@ -43,8 +44,5 @@ body {
     background-color: var(--dark-blue);
     box-shadow: 8px 8px rgb(173, 216, 230, .8);
     transform: translate(-20px, -5px);
-}
-
-.challenge__container__items__item:hover a{
     color: var(--light-grey);
 }
