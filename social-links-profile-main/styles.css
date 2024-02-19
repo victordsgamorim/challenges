@@ -21,6 +21,7 @@
     --grey: hsl(0, 0%, 20%);
     --dark-grey: hsl(0, 0%, 12%);
     --off-black: hsl(0, 0%, 8%);
+    --green: #CAE76D;
 }
 
 * {
@@ -62,7 +63,7 @@ body {
 }
 
 .profile__card h2 {
-    color: #CAE76D;
+    color: var(--green);
     font-size: 1em;
     font-family: 'Inter', sans-serif;
     font-weight: 600;
@@ -87,11 +88,17 @@ body {
     font-size: .875em;
 }
 
-.profile__links span {
+.profile__links a {
     box-sizing: border-box;
     background-color: var(--grey);
     width: 100%;
     padding: 1em;
     color: var(--white);
     border-radius: 8px;
+    text-decoration: none;
+}
+
+.profile__links a:hover{
+    background-color: var(--green);
+    color: black;
 }
