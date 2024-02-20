@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+:root {
+    --light-red: 0, 100%, 67%;
+    --orangey-yellow: 39, 100%, 56%;
+    --green-teal: 166, 100%, 37%;
+    --cobalt-blue: 234, 85%, 45%;
+
+    --light-slate-blue: 252, 100%, 67%;
+    --light-royal-blue: 241, 81%, 54%;
+    --violet-blue: 256, 72%, 46%, 1;
+    --persian-blue: 241, 72%, 46%, 0;
+
+    --white: 0, 0%, 100%;
+    --pale-blue: 221, 100%, 96%;
+    --light-lavender: 241, 100%, 89%;
+    --dark-gray-blue: 224, 30%, 27%;
+}
+
+body {
+    font-family: "Hanken Grotesk", sans-serif;
+}
+
+.header__result {
+    background-image: linear-gradient(hsl(var(--light-slate-blue)), hsl(var(--light-royal-blue)));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+    gap: 16px;
+    width: 100%;
+    padding: 1.8em 0;
+}
+
+.header__result>span:first-of-type {
+    font-weight: 500;
+    font-size: 1.2em;
+    color: hsl(var(--light-lavender));
+}
+
+.header__result div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(hsla(var(--violet-blue)), hsla(var(--persian-blue)));
+    padding: 2em;
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 56px;
+    color: hsl(var(--white));
+}
+
+.header__result div span {
+    font-weight: 500;
+    color: hsl(var(--light-lavender));
+}
+
+.header__result strong {
+    font-weight: 500;
+    font-size: 1.5em;
+    color: hsl(var(--white));
+}
+
+.header__result span:nth-of-type(2) {
+    color: hsl(var(--light-lavender));
+    padding: 0 3em;
+    text-align: center;
+    font-weight: 500;
+}
+
+.main__result h2 {
+    font-weight: 600;
+    font-size: 1.2em;
+    color: hsl(var(--dark-gray-blue));
+}
+
+.main__result {
+    margin: 25px 25px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 27px;
+}
+
+.main__result>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .1);
+    padding: .8em;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.main__result>div>div:first-child {
+    display: flex;
+    gap: 12px;
+}
+
+.main__result>div>div:nth-child(2) strong {
+    padding-right: 5px;
+    color: hsl(var(--dark-gray-blue));
+}
+
+.main__result>div>div:nth-child(2) span {
+    color: hsla(var(--dark-gray-blue), .5);
+    font-weight: 700;
+}
+
+.main__result>div:first-of-type {
+    background-color: hsla(var(--light-red), .05);
+    color: hsl(var(--light-red));
+}
+
+.main__result>div:nth-of-type(2) {
+    background-color: hsl(var(--orangey-yellow), .05);
+    color: hsl(var(--orangey-yellow));
+}
+
+.main__result>div:nth-of-type(3) {
+    background-color: hsla(var(--green-teal), .05);
+    color: hsl(var(--green-teal));
+}
+
+.main__result>div:last-of-type {
+    background-color: hsla(var(--cobalt-blue), .05);
+    color: hsl(var(--cobalt-blue));
+}
+
+.main__result a span {
+    background-color: hsl(var(--dark-gray-blue));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    border-radius: 50px
+}
+
+.main__result a {
+    color: hsl(var(--white));
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.main__result a span:hover {
+    background-image: linear-gradient(hsl(var(--light-slate-blue)), hsl(var(--light-royal-blue)));
+}
+
+@media screen and (min-width: 700px) {
+
+    .header__result {
+        border-radius: 24px;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    body>div {
+        display: flex;
+        justify-content: center;
+        max-width: 700px;
+        min-width: 500px;
+        border-radius: 24px;
+        box-shadow: 10px 10px 15px hsla(var(--light-royal-blue), .1);
+    }
+
+    body .header__result {
+        width: 55%;
+    }
+
+    body .main__result {
+        width: 45%;
+        margin: 2em;
+    }
+
+
+}

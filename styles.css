@@ -20,10 +20,12 @@ body {
 .challenge__container__items {
     min-height: 100vh;
     display: flex;
-    justify-content: center;
-    flex-direction: column;
+    flex-wrap: wrap;
+    flex-direction: row;
     align-items: center;
-    gap: 1em;
+    align-content: center;
+    justify-content: center;
+    gap: 16px;
 }
 
 .challenge__container__items__item {
@@ -33,7 +35,7 @@ body {
     border: 2px solid var(--dark-blue);
     transition: transform 1s;
     text-decoration: none;
-    
+    display: inline-block;
 }
 
 .challenge__container__items__item {
