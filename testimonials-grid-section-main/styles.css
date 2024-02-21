@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+:root {
+    --moderate-violet: 263, 55%, 52%;
+    --very-dark-grayish-blue: 217, 19%, 35%;
+    --very-dark-blackish-blue: 219, 29%, 14%;
+    --white: 0, 0%, 100%;
+
+    --light-gray: 0, 0%, 81%;
+    --light-grayish-blue: 210, 46%, 95%;
+}
+
+body {
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-size: 13px;
+    background-color: hsl(var(--light-grayish-blue));
+    height: 100vh;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    margin: 3rem 2em;
+    position: relative;
+}
+
+.testimonial__card {
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 1rem;
+    border-radius: 8px;
+}
+
+/* Daniel */
+.testimonial__card:first-of-type {
+    background-color: hsl(var(--moderate-violet));
+}
+
+.testimonial__card:first-of-type::after {
+    position: absolute;
+    background-image: url('images/bg-pattern-quotation.svg');
+    right: 30px;
+    top: 0;
+}
+
+/* Jeanette */
+.testimonial__card:nth-of-type(2) {
+    order: 2;
+}
+
+/* Jonathan */
+.testimonial__card:nth-of-type(3) {
+    background-color: hsl(var(--very-dark-grayish-blue));
+}
+
+/* Kira */
+.testimonial__card:nth-of-type(4) {
+    order: 5;
+}
+
+/* Patrick */
+.testimonial__card:nth-of-type(5) {
+    order: 4;
+    background-color: hsl(var(--very-dark-blackish-blue));
+}
+
+.testimonial__card:nth-of-type(odd) {
+    color: hsl(var(--white));
+}
+
+.testimonial__card:nth-of-type(even) {
+    background-color: hsl(var(--white));
+    color: hsl(var(--very-dark-grayish-blue));
+}
+
+
+.profile__person {
+    display: flex;
+    gap: 18px;
+}
+
+.profile__person img {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+}
+
+.testimonial__card:first-child .profile__person img {
+    border: 2px solid hsla(var(--white), .5);
+}
+
+
+.testimonial__card:nth-of-type(5) .profile__person img {
+    border: 2px solid hsla(var(--moderate-violet), 1);
+}
+
+.profile__person:nth-last-of-type(even) img {
+    border: 2px solid black;
+}
+
+.testimonial__card .profile__person div span {
+    font-size: .85em;
+}
+
+.testimonial__card:nth-of-type(odd) .profile__person div span {
+    color: hsla(var(--white), .5);
+}
+
+.testimonial__card:nth-of-type(even) .profile__person div span {
+    color: hsla(var(--very-dark-grayish-blue), .5);
+}
+
+.testimonial__card strong {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.testimonial__card:nth-of-type(odd) strong {
+    color: hsl(var(--white));
+}
+
+.testimonial__card:nth-of-type(even) strong {
+    color: hsl(var(--very-dark-grayish-blue));
+}
+
+.testimonial__card:nth-of-type(odd) blockquote {
+    color: hsla(var(--white), .7);
+}
+
+.testimonial__card:nth-of-type(even) blockquote {
+    color: hsla(var(--very-dark-grayish-blue), .7);
+}
+
+
+@media screen and (min-width: 800px) {
+    body {
+        justify-content: center;
+        align-content: center;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas:
+            'space1 space1 space2 space3'
+            'space4 space5 space5 space3'
+        ;
+        column-gap: 2.1rem;
+        row-gap: 1.8rem;
+        max-width: 1120px;
+        min-width: 500px;
+        margin: 0 auto;
+        min-height: 600px;
+    }
+
+    /* Daniel */
+    .testimonial__card:first-of-type {
+        grid-area: space1;
+    }
+
+    /* Jeanette */
+    .testimonial__card:nth-of-type(2) {
+        grid-area: space4;
+
+    }
+
+    /* Jonathan */
+    .testimonial__card:nth-of-type(3) {
+        grid-area: space2;
+
+    }
+
+    /* Kira */
+    .testimonial__card:nth-of-type(4) {
+        grid-area: space3;
+    }
+
+    /* Patrick */
+    .testimonial__card:nth-of-type(5) {
+        grid-area: space5;
+    }
+}
