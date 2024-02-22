@@ -35,7 +35,7 @@ main {
     padding: 2em;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     gap: 1rem;
     border-radius: 8px;
 }
@@ -43,13 +43,9 @@ main {
 /* Daniel */
 .testimonial__card:first-of-type {
     background-color: hsl(var(--moderate-violet));
-}
-
-.testimonial__card:first-of-type::after {
-    position: absolute;
-    background-image: url('images/bg-pattern-quotation.svg');
-    right: 30px;
-    top: 0;
+    background-image: url('../images/bg-pattern-quotation.svg');
+    background-repeat: no-repeat;
+    background-position: 92% top;
 }
 
 /* Jeanette */
@@ -141,10 +137,11 @@ main {
 }
 
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
     body {
+        display: flex;
         justify-content: center;
-        align-content: center;
+        align-items: center;
     }
 
     main {
@@ -159,8 +156,7 @@ main {
         row-gap: 1.8rem;
         max-width: 1120px;
         min-width: 500px;
-        margin: 0 auto;
-        min-height: 600px;
+        height: 600px;
     }
 
     /* Daniel */
