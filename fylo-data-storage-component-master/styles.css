@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --linear-bar--color1: 6, 100%, 80%;
+    --linear-bar--color2: 335, 100%, 65%;
+
+    --pale-blue: 243, 100%, 93%;
+    --grayish-blue: 229, 7%, 55%;
+    --dark-blue: 228, 56%, 26%;
+    --very-dark-blue: 229, 57%, 11%;
+}
+
+body {
+    background-image: url(images/bg-mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 14px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+
+}
+
+main {
+    width: 100vw;
+    margin: 0 1.4rem;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 900px;
+}
+
+.icons__card,
+.storage__info__card {
+    width: 100%;
+    background-color: hsl(var(--dark-blue));
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px 10px hsla(var(--very-dark-blue), .1);
+}
+
+/* 1.0 Icons Card */
+.icons__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    border-top-right-radius: 100px;
+    margin-bottom: 20px;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
+/* 1.1 Icon List */
+.icons__card ul {
+    margin-top: 2rem;
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+}
+
+.icons__card ul li {
+    height: 45px;
+    width: 45px;
+    background-color: hsl(var(--very-dark-blue));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+/* 2.0 Storage Info Card */
+.storage__info__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    color: hsl(var(--pale-blue));
+    padding-top: 2rem;
+    padding-bottom: 3.2rem;
+    position: relative;
+}
+
+/* 2.1 Storage Linear Bar */
+.linear__bar {
+    width: 100%;
+}
+
+.linear__bar_back {
+    height: 18px;
+    background-color: hsl(var(--very-dark-blue));
+    border-radius: 50px;
+    margin: 1rem 0 .75rem 0;
+}
+
+.linear__bar__front {
+    height: 100%;
+    width: 81.5%;
+    background-image: linear-gradient(to right, hsl(var(--linear-bar--color1)), hsl(var(--linear-bar--color2)));
+    border: solid 2px hsl(var(--very-dark-blue));
+    box-sizing: border-box;
+    border-radius: 50px;
+    position: relative;
+}
+
+.linear__bar div:last-of-type {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: .9em;
+}
+
+.linear__bar__ball {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    right: 2px;
+    top: 2px;
+}
+
+/* 3.0 Storage Left Card */
+
+.storage__left__card {
+    position: absolute;
+    bottom: -2.1875rem;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+
+.storage__left__card div:first-of-type {
+    color: black;
+    background-color: white;
+    border-radius: 8px;
+    padding: .8rem 1.7rem;
+    font-size: 2.8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.storage__left__card div:nth-of-type(2) {
+    display: none;
+    border-top: 30px solid white;
+    border-left: 30px solid transparent;
+    margin-top: -10px;
+}
+
+/* 3.1 Storage number */
+.storage__left__card span {
+    text-transform: uppercase;
+    font-size: .3em;
+    font-weight: 700;
+    color: hsl(var(--grayish-blue));
+
+}
+
+@media (min-width: 930px) {
+    body {
+        background-image: url(images/bg-desktop.png);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: contain;
+        background-color: hsl(var(--very-dark-blue));
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 20px;
+        align-items: end;
+    }
+
+    /* 1.0 Icons Card */
+    .icons__card {
+        margin-right: 20px;
+        margin-bottom: 0;
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+    /* 2.0 Storage Info Card */
+    .storage__info__card {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        align-items: start;
+        grid-column-start: 2;
+        grid-column-end: 4;
+    }
+
+    /* 3.0 Storage Left Card */
+    .storage__left__card {
+        position: absolute;
+        bottom: initial;
+        top: -2.1875rem;
+        right: 2.5rem;
+    }
+
+    .storage__left__card div:nth-of-type(2) {
+        display: block;
+    }
+}
