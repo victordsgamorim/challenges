@@ -38,12 +38,13 @@ main {
     justify-content: space-between;
     gap: 1rem;
     border-radius: 8px;
+    box-shadow: 10px 10px 10px hsla(var(--light-gray), .3);
 }
 
 /* Daniel */
 .testimonial__card:first-of-type {
     background-color: hsl(var(--moderate-violet));
-    background-image: url('../images/bg-pattern-quotation.svg');
+    background-image: url('../testimonials-grid-section-main/images/bg-pattern-quotation.svg');
     background-repeat: no-repeat;
     background-position: 92% top;
 }
