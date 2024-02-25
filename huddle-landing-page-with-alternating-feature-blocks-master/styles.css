@@ -14,6 +14,10 @@
     --grayish-blue: 208, 11%, 55%;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* INITIAL CONFIGS */
 body {
     font-size: 1.125rem;
@@ -24,7 +28,8 @@ body header {
     font-weight: 600;
 }
 
-body main {
+body main,
+footer {
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
 }
@@ -40,27 +45,25 @@ header {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain; */
-
 }
 
-.presentation__header {
+.app-bar {
     display: flex;
     padding: 1.5em 1em;
     justify-content: space-between;
 }
 
-.presentation__header img {
+.app-bar img {
     height: 16px;
     width: auto;
 }
 
-header a {
-    text-decoration: none;
+.btn-sign-course--small {
     font-size: .575em;
     color: black;
 }
 
-.presentation__header a strong {
+.btn-sign-course--small strong {
     padding: .3em 2em;
     border-radius: 16px;
     background-color: white;
@@ -68,7 +71,7 @@ header a {
 }
 
 /* PRESENTATION SECITON */
-.presentation__section {
+.intro {
     height: calc((100vh - 3em) - 16px);
     text-align: center;
     font-family: "Open Sans", sans-serif;
@@ -80,11 +83,11 @@ header a {
     align-items: center;
 }
 
-.presentation__section h1 {
+.intro h1 {
     font-size: 1.38em;
 }
 
-.presentation__section p {
+.intro p {
     font-size: .875em;
 }
 
@@ -92,26 +95,26 @@ header a {
     color: white;
     background-color: hsl(var(--primary));
     padding: 1em 5.125em;
-    font-size: 1.125em;
+    font-size: .75rem;
     border-radius: 20px;
     font-weight: 600;
     letter-spacing: .3px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
 }
 
-.presentation__section img {
+.intro img {
     width: 100%;
 }
 
 main {
-    margin: 3.2em 1em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2em;
+    margin: 1em 0 0 0;
 }
 
-main section:not(:last-of-type) {
+.card {
     box-shadow: 0 0 10px rgba(0, 0, 0, .09);
     border-radius: 16px;
     padding: 2.5em;
@@ -121,39 +124,109 @@ main section:not(:last-of-type) {
     align-items: center;
     gap: 1em;
     text-align: center;
+    margin: 2em 1em 0 1em;
 }
 
-main section h2 {
+.card h2 {
     color: hsl(var(--very-dark-cyan));
     font-size: 1.125em;
     margin-top: 2em;
 }
 
-main section p {
+.card p {
     color: hsl(var(--grayish-blue));
     font-size: .75em;
     letter-spacing: .3px;
     line-height: 1.5em;
 }
 
-main section img {
+.card img {
     width: 95%;
 }
 
-main section:last-of-type {
+.card--small {
     box-shadow: 0 0 10px rgba(0, 0, 0, .09);
     border-radius: 16px;
-    padding: 2em;
+    padding: 1.2em;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1em;
+    gap: 1.5em;
     text-align: center;
+    margin-top: 6em;
+    margin-bottom: -50px;
+    background-color: white;
 }
 
+.card--small h3 {
+    font-size: 1em;
+    font-weight: 700;
+}
+
+main>div {
+    height: 100px;
+    background-color: hsl(var(--very-dark-cyan));
+    width: 100%;
+    z-index: -1;
+}
 
 /* FOOTER */
 footer {
-    height: 100vh;
     background-color: hsl(var(--very-dark-cyan));
+    padding: 2rem 2rem 2rem 2rem;
+}
+
+footer>img {
+    margin-bottom: 1em;
+    height: 28px;
+    filter: invert(48%) sepia(79%) saturate(0%) hue-rotate(86deg) brightness(150%) contrast(119%);
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    color: white;
+    font-size: .95em;
+}
+
+footer ul li {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+}
+
+footer section {
+    margin-bottom: 2em;
+}
+
+.contact--medias ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 2em;
+}
+
+.contact--medias ul li {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    border: solid 1px white;
+    padding: 5px;
+}
+
+
+.contact--medias img {
+    width: 100%;
+    padding: 3px;
+    filter: invert(48%) sepia(79%) saturate(0%) hue-rotate(86deg) brightness(150%) contrast(119%);
+}
+
+footer>p {
+    text-align: center;
+    font-size: .8rem;
+    color: white;
 }
