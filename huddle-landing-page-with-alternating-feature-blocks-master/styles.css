@@ -15,7 +15,8 @@
 }
 
 a {
-    text-decoration: none;
+    text-decoration: wavy;
+    color: white;
 }
 
 /* INITIAL CONFIGS */
@@ -41,10 +42,11 @@ header {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    /* background-image: url(./images/bg-hero-mobile.svg);
+    background-image: url(./images/bg-hero-mobile.svg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain; */
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 .app-bar {
@@ -92,7 +94,6 @@ header {
 }
 
 .btn-sign-course {
-    color: white;
     background-color: hsl(var(--primary));
     padding: 1em 5.125em;
     font-size: .75rem;
@@ -100,9 +101,17 @@ header {
     font-weight: 600;
     letter-spacing: .3px;
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    display: inline-block;
 }
 
-.intro img {
+.intro__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    margin-bottom: 10px;
+}
+
+.illustration {
     width: 100%;
 }
 
@@ -145,6 +154,8 @@ main {
 }
 
 .card--small {
+    width: 95%;
+    max-width: 600px;
     box-shadow: 0 0 10px rgba(0, 0, 0, .09);
     border-radius: 16px;
     padding: 1.2em;
@@ -176,7 +187,7 @@ footer {
     padding: 2rem 2rem 2rem 2rem;
 }
 
-footer>img {
+.contact--info>img {
     margin-bottom: 1em;
     height: 28px;
     filter: invert(48%) sepia(79%) saturate(0%) hue-rotate(86deg) brightness(150%) contrast(119%);
@@ -225,8 +236,115 @@ footer section {
     filter: invert(48%) sepia(79%) saturate(0%) hue-rotate(86deg) brightness(150%) contrast(119%);
 }
 
-footer>p {
+.contact--medias p {
     text-align: center;
     font-size: .8rem;
     color: white;
+    margin-top: 2em;
+}
+
+.btn-sign-course:hover {
+    background-color: hsla(var(--primary), .8);
+}
+
+.contact--about ul:first-of-type {
+    margin-bottom: 1em;
+}
+
+.contact--about__link:hover {
+    text-decoration: underline;
+}
+
+.contact--medias ul li:hover {
+    border: solid 1px hsl(var(--primary));
+}
+
+.contact--medias img:hover {
+    filter: invert(48%) sepia(79%) saturate(0%) hue-rotate(86deg) brightness(150%) contrast(119%);
+}
+
+@media (min-width: 460px) {
+    .illustration {
+        max-width: 400px;
+    }
+}
+
+@media(min-width: 900px) {
+
+    main .illustration {
+        max-width: 250px;
+    }
+
+    header {
+        height: 500px;
+        justify-content: center;
+    }
+
+    .app-bar,
+    .intro {
+        margin: 0 4em;
+    }
+
+    .intro {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        column-gap: 2em;
+    }
+
+    .intro .illustration {
+        align-self: center;
+        justify-self: center;
+        width: 100%;
+    }
+
+    .intro__content {
+        align-items: start;
+        text-align: start;
+    }
+
+    .card {
+        max-width: 900px;
+        padding: 2em 5em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5em;
+    }
+
+    .card:first-child,
+    .card:nth-child(3) {
+        flex-direction: row-reverse;
+    }
+
+    .card:nth-child(2) {
+        flex-direction: row;
+    }
+
+    .card__content {
+        text-align: start;
+    }
+
+    .card__content h2 {
+        margin-bottom: 1em;
+    }
+
+    footer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1em;
+    }
+
+    .contact--about{
+        display: flex;
+        justify-content: space-around;
+        align-self: center;
+    }
+
+    .contact--medias{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+
 }
