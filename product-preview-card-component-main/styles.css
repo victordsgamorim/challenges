@@ -116,6 +116,11 @@ body main {
         max-width: 600px;
     }
 
+    .card--content{
+        gap: 1.7em;
+        padding: 2.2em;
+    }
+
     .image {
         height: 100%;
         background-image: url(images/image-product-desktop.jpg);
