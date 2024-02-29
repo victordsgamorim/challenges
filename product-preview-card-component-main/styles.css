@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --dark-cya: 158, 36%, 37%;
+    --super-dark-cya: 158, 36%, 18%;
+    --cream: 30, 38%, 92%;
+
+    --very-dark-blue: 212, 21%, 14%;
+    --dark-grayish-blue: 228, 12%, 48%;
+    --white: 0, 0%, 100%;
+}
+
+body {
+    background-color: hsl(var(--cream));
+    font-size: 0.875rem;
+    font-family: "Montserrat", sans-serif;
+    color: hsl(var(--dark-grayish-blue));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+body main {
+    background-color: hsl(var(--white));
+    margin: 1.2em;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(5, 5, 10, .1);
+}
+
+.image {
+    background-image: url(images/image-product-mobile.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    height: 240px;
+    width: 100%;
+}
+
+.card--content {
+    padding: 1.7em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.card--content>strong {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    letter-spacing: 5px;
+    font-size: .9em;
+    font-weight: 500;
+}
+
+.card--content h1 {
+    font-family: "Fraunces", sans-serif;
+    font-size: 2.3em;
+    font-weight: 700;
+    line-height: 1.1em;
+    color: hsl(var(--very-dark-blue));
+}
+
+.card--content>p {
+    font-weight: 500;
+    line-height: 1.7em;
+}
+
+.prices {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.prices strong {
+    font-family: "Fraunces", sans-serif;
+    font-size: 2.3em;
+    font-weight: 700;
+    color: hsl(var(--dark-cya));
+}
+
+.prices small {
+    font-size: .9em;
+    text-decoration: line-through;
+}
+
+.btn-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(var(--dark-cya));
+    padding: 1.2em;
+    text-decoration: none;
+    color: hsl(var(--white));
+    font-weight: 700;
+    gap: 1em;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-cart:hover {
+    background-color: hsl(var(--super-dark-cya));
+}
+
+@media (min-width: 500px) {
+    main {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        max-width: 600px;
+    }
+
+    .image {
+        height: 100%;
+        background-image: url(images/image-product-desktop.jpg);
+        background-size: cover;
+    }
+}
