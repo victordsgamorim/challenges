@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&family=Lexend+Deca:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --card-one-color: 31, 77%, 52%;
+    --card-two-color: 184, 100%, 22%;
+    --card-three-color: 179, 100%, 13%;
+
+    --transparent-white: 0, 0%, 100%, 0.75;
+    --very-light-gray: 0, 0%, 95%;
+}
+
+body {
+    font-size: 0.9375rem;
+    font-family: 'Lexend Deca', sans-serif;
+    background-color: hsl(var(--transparent-white));
+}
+
+main {
+    margin: 1.75em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.cards__item {
+    padding: 3.2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 2em;
+}
+
+.card--orange {
+    background-color: hsl(var(--card-one-color));
+    color: hsl(var(--card-one-color));
+}
+
+.card--dark-cyan {
+    background-color: hsl(var(--card-two-color));
+}
+
+.card--very-dark-cyan {
+    background-color: hsl(var(--card-three-color));
+}
+
+.cards__item h2 {
+    color: hsl(var(--very-light-gray));
+    font-family: 'Big Shoulders Display', sans-serif;
+    text-transform: uppercase;
+    font-size: 2.6em;
+}
+
+.cards__item p {
+    color: hsl(var(--transparent-white));
+    line-height: 1.625em;
+}
+
+.btn-learn-more {
+    background-color: hsl(var(--very-light-gray));
+    text-decoration: none;
+    border-radius: 25px;
+    padding: 1em 2em;
+}
+
+.card--orange .btn-learn-more {
+    color: hsl(var(--card-one-color));
+}
+
+.card--dark-cyan .btn-learn-more {
+    color: hsl(var(--card-two-color));
+}
+
+.card--very-dark-cyan .btn-learn-more {
+    color: hsl(var(--card-three-color));
+}
+
+@media (min-width: 950px) {
+
+    main {
+        margin: 0 auto;
+        height: 100vh;
+        display: flex;
+    }
+
+    .cards {
+        margin: 1.75em;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cards__item {
+        max-width: 305px;
+        height: 66vh;
+        display: flex;
+    }
+
+    .btn-learn-more {
+        margin-top: auto;
+    }
+}
