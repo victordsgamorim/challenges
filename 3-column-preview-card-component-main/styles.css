@@ -18,7 +18,7 @@
 body {
     font-size: 0.9375rem;
     font-family: 'Lexend Deca', sans-serif;
-    background-color: hsl(var(--transparent-white));
+    background-color: hsl(var(--very-light-gray));
 }
 
 main {
