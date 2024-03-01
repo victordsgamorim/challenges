@@ -92,6 +92,12 @@ main {
     color: hsl(var(--card-three-color));
 }
 
+.btn-learn-more:hover{
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
 @media (min-width: 950px) {
 
     main {
