@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --white: 0, 0%, 100%;
+    --light-pink: 275, 100%, 97%;
+    --grayish-purple: 292, 16%, 49%;
+    --dark-purple: 292, 42%, 14%;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    background-color: hsl(var(--light-pink));
+}
+
+header {
+    height: 230px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: red;
+    position: absolute;
+    z-index: -1;
+    background-image: url(assets/images/background-pattern-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main {
+    margin: 0 auto;
+    max-width: 650px;
+}
+
+.card {
+    margin: 9rem 1.5rem;
+    background-color: white;
+    padding: min(max(1.5rem, 3vw), 2.5rem);
+    border-radius: 8px;
+}
+
+.card__head {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.card__head img {
+    width: clamp(24px, 5vw, 40px);
+}
+
+.card__title,
+.expansion-tile__title {
+    color: hsl(var(--dark-purple));
+}
+
+.card__title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+}
+
+.expansion-tile__label label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.expansion-tile__label img {
+    margin-left: auto;
+}
+
+.expansion-tile__title {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    font-weight: 600;
+}
+
+.card__paragraph {
+    color: hsl(var(--grayish-purple));
+    font-weight: 400;
+    font-size: clamp(.875rem, 2vw, 1rem);
+    line-height: clamp(1.3rem, 5vw, 1.4rem);
+    margin: 0 0;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 1s, margin 1s;
+}
+
+hr {
+    border: solid .5px hsl(var(--grayish-purple), .15);
+    margin: min(max(1rem, 3vw), 1.5rem) 0;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.card-visibility {
+    max-height: 200px;
+    margin: 1.6rem 0;
+}
+
+@media (min-width: 800px) {
+    header {
+        height: 320px;
+        background-image: url(assets/images/background-pattern-desktop.svg);
+    }
+
+}
