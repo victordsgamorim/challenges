@@ -22,7 +22,6 @@ header {
     width: 100%;
     top: 0;
     left: 0;
-    background-color: red;
     position: absolute;
     z-index: -1;
     background-image: url(assets/images/background-pattern-mobile.svg);
