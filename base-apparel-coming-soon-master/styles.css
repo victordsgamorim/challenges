@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background-color-l1: 0, 0%, 100%;
+    --background-color-l2: 0, 100%, 98%;
+    --bt-color-l1: 0, 80%, 86%;
+    --bt-color-l2: 0, 74%, 74%;
+
+    --primary-color: 0, 36%, 70%;
+    --secondary-color: 0, 93%, 68%;
+    --dark-grayish-red: 0, 6%, 24%;
+
+    --font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(135deg, hsl(var(--background-color-l1)), hsl(var(--background-color-l2)));
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    box-shadow: 0px 0px 50px hsla(var(--bt-color-l2), .2);
+    max-width: 450px;
+    position: relative;
+}
+
+main article {
+    background-image: linear-gradient(135deg, hsl(var(--background-color-l1)), hsl(var(--background-color-l2)));
+}
+
+
+.logo-wrapper {
+    width: 100%;
+}
+
+.logo-wrapper img {
+    margin: clamp(2rem, 1.2958rem + 3.0047vi, 4rem);
+    width: clamp(6.25rem, 4.9296rem + 5.6338vi, 10rem);
+}
+
+.banner-wrapper {
+    background-image: url(images/hero-mobile.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 250px;
+}
+
+.content-wrapper {
+    text-align: center;
+    padding: 4rem clamp(2rem, 1.2958rem + 3.0047vi, 4rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1.7rem;
+
+}
+
+.content__title {
+    text-transform: uppercase;
+    letter-spacing: clamp(0.625rem, 0.4489rem + 0.7512vi, 1.125rem);
+    font-size: clamp(2.5rem, 2.0158rem + 2.0657vi, 3.875rem);
+    font-weight: 300;
+    margin: 0 auto;
+    width: min-content;
+    color: hsl(var(--primary-color));
+}
+
+.content__title__coming-soon {
+    font-weight: 600;
+    color: hsl(var(--dark-grayish-red));
+}
+
+.content__text {
+    color: hsl(var(--primary-color));
+    font-weight: 400;
+    font-size: clamp(0.875rem, 0.831rem + 0.1878vi, 1rem);
+    line-height: 1.5rem;
+}
+
+.email-box {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+input[type="email"] {
+    border: 1px solid hsla(var(--primary-color));
+    background-color: transparent;
+    padding: clamp(1rem, 0.912rem + 0.3756vi, 1.25rem) clamp(1.5rem, 1.368rem + 0.5634vi, 1.875rem);
+    letter-spacing: .5px;
+    border-radius: 50px;
+    width: 100%;
+}
+
+input[type="email"]::placeholder {
+    font-size: clamp(0.8438rem, 0.7887rem + 0.2347vi, 1rem);
+    font-family: var(--font-family);
+    color: hsla(var(--primary-color), .5);
+}
+
+input[type="email"],
+input[type="email"]:focus {
+    outline: none;
+    font-family: var(--font-family);
+    color: hsl(var(--primary-color));
+    border: 1px solid hsl(var(--primary-color));
+}
+
+.btn-submit {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    border-radius: 50px;
+    width: clamp(4.0625rem, 3.2923rem + 3.2864vi, 6.25rem);
+    background-image: linear-gradient(135deg, hsl(var(--bt-color-l1)), hsl(var(--bt-color-l2)));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 10px 10px 25px hsl(var(--primary-color));
+    cursor: pointer;
+    overflow: clip;
+    transition: background-color 1s;
+}
+
+.btn-submit:hover::before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    overflow: clip;
+    background-color: rgba(255, 255, 255, .3);
+}
+
+.error {
+    border: 2px solid red !important;
+}
+
+@media(min-width: 800px) {
+    main {
+        max-width: initial;
+        display: grid;
+        grid-template-columns: minmax(auto, 830px) minmax(30vw, 610px);
+        grid-template-areas: 'c p';
+    }
+
+    main article {
+        grid-area: c;
+        background-image: url(images/bg-pattern-desktop.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .banner-wrapper {
+        grid-area: p;
+        height: 100%;
+        background-image: url(images/hero-desktop.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+
+    .content-wrapper {
+        text-align: start;
+    }
+
+    .email-box {
+        max-width: 410px;
+    }
+
+    .content__title {
+        margin: initial;
+    }
+}
