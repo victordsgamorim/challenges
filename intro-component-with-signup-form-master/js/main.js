@@ -1,27 +1,48 @@
+import { emailValidation } from "./email-validation.js";
+
 const form = document.querySelector('[data-form]');
 const inputs = document.querySelectorAll('.input-form');
+const btnSubmit = document.querySelector('button[type="submit"]');
 
-messages = [];
 
-form.addEventListener('click', (event) => {
-    event.preventDefault();
-    inputs.forEach((element) => {
-
-        const input = element.value;
-        if (element.hasAttribute('data-firstName') && element.value.length == null) {
-            console.log("Vai a merda")
-            return;
-        }
-
-        if (element.hasAttribute('data-secondName') && element.value.length == null) {
-            return;
-        }
-
-        if (element.hasAttribute('data-email') && element.value.length == null) {
-            return;
-        }
-        if (element.value == null) {
-
-        }
-    })
+inputs.forEach((input) => {
+    input.addEventListener('blur', () => validateFields(input))
+    input.addEventListener('invalid', (event) => event.preventDefault())
 })
+
+btnSubmit.addEventListener('click', (event) => {
+    event.preventDefault();
+    inputs.forEach((input) => validateFields(input))
+})
+
+function validateFields(input) {
+    if (input.name === 'firstName') {
+        verifyField(input, "First Name cannot be empty", input.checkValidity());
+        return;
+    }
+
+    if (input.name === "secondName") {
+        verifyField(input, "Second Name cannot be empty", input.checkValidity());
+        return;
+    }
+
+    if (input.name === "email") {
+        verifyField(input, "Looks like this is not an email", emailValidation(input.value));
+        return;
+    }
+    verifyField(input, "Password cannot be empty", input.checkValidity());
+}
+
+function verifyField(input, message, isValid) {
+    let m = '';
+    if (!isValid) {
+        m = message;
+        input.classList.add("input-error");
+    } else {
+        m = '';
+        input.classList.remove("input-error");
+    }
+
+    const errorMessage = input.parentNode.querySelector('.message-error');
+    errorMessage.textContent = m;
+}
