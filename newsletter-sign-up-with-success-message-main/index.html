@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script defer src="assets/js/main.js"></script>
+</head>
+
+<body>
+
+  <main>
+    <section class="image-wrapper"></section>
+
+    <section class="info-wrapper">
+      <h1>Stay updated!</h1>
+
+      <p>Join 60,000+ product managers receiving monthly updates on:</p>
+
+      <ul class="info__products">
+        <li class="info__products__item">Product discovery and building what matters</li>
+        <li class="info__products__item">Measuring to ensure updates are a success</li>
+        <li class="info__products__item">And much more!</li>
+      </ul>
+
+      <form action="/" data-form>
+        <label for="email">Email address</label>
+        <div class="email-box">
+          <span class="error-message">Valid email required</span>
+          <input id="email" type="email" name="email" placeholder="email@company.com" class="error-input">
+        </div>
+
+        <button type="submit">Subscribe to monthly newsletter</button>
+      </form>
+    </section>
+
+    <section class="success-wrapper hidden">
+      <h1>Thanks for subscribing!</h1>
+
+      A confirmation email has been sent to ash@loremcompany.com.
+      Please open it and click the button inside to confirm your subscription.
+
+      Dismiss message
+    </section>
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,174 @@
+@font-face {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    src: url(../assets/fonts/Roboto-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    src: url(../assets/fonts/Roboto-Bold.ttf) format('truetype');
+}
+
+:root {
+    --primary-tomato: 4, 100%, 67%;
+
+    --dark-slate-grey: 234, 29%, 20%;
+    --charcoal-grey: 235, 18%, 26%;
+    --grey: 231, 7%, 60%;
+    --white: 0, 0%, 100%;
+
+    --font-family: 'Roboto', sans-serif;
+}
+
+html {
+    font-family: var(--font-family);
+}
+
+body{
+    background-color: hsl(var(--charcoal-grey));
+    min-height: 100svh;
+}
+
+main {
+    display: grid;
+    grid-template-rows: 284px auto;
+    max-width: 480px;
+    background-color: white;
+}
+
+.image-wrapper {
+    border-bottom-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    background-image: url(../images/illustration-sign-up-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.info-wrapper {
+    padding: 2.5rem clamp(1.5rem, -0.2736rem + 7.5676vi, 4.125rem);
+}
+
+.info-wrapper h1 {
+    font-size: clamp(2.3438rem, 1.7314rem + 2.6126vi, 3.25rem);
+    font-weight: bold;
+    color: hsl(var(--dark-slate-grey));
+    margin-bottom: 1.625rem;
+}
+
+.info-wrapper>p {
+    color: hsl(var(--charcoal-grey));
+    line-height: 1.5;
+    margin-bottom: 1.75rem;
+    font-size: 1rem;
+}
+
+.info__products {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin-bottom: 2.75rem;
+}
+
+.info__products__item {
+    color: hsl(var(--charcoal-grey));
+    font-size: 1rem;
+    display: flex;
+    line-height: 1.5;
+}
+
+.info__products__item::before {
+    content: '';
+    background-image: url(../images/icon-list.svg);
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 22px;
+    width: 22px;
+    margin-right: 1.25rem;
+}
+
+form[data-form] {
+    display: flex;
+    flex-direction: column;
+}
+
+form[data-form] label {
+    font-size: 0.6875rem;
+    font-weight: bold;
+    color: hsl(var(--dark-slate-grey));
+    margin-bottom: .75rem;
+}
+
+.email-box {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.email-box input {
+    font-family: var(--font-family);
+    font-size: 1rem;
+    border: 1px solid hsl(var(--grey));
+    padding: 1.1875rem 1.4375rem;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.email-box input::placeholder {
+    font-family: var(--font-family);
+    font-size: 1rem;
+}
+
+.error-input {
+    border: 1px solid hsl(var(--primary-tomato)) !important;
+    color: hsl(var(--primary-tomato)) !important;
+    background-color: hsla(var(--primary-tomato), 0.1);
+}
+
+.error-message {
+    color: hsl(var(--primary-tomato));
+    font-size: 0.6875rem;
+    position: absolute;
+    top: -1.5rem;
+    right: 0;
+    font-weight: bold;
+}
+
+button[type='submit'] {
+    background-color: hsl(var(--dark-slate-grey));
+    padding: 1.25rem;
+    border: 0px solid transparent;
+    border-radius: 8px;
+    color: hsl(var(--white));
+    font-weight: bold;
+    font-size: .9375rem;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (min-width: 830px) {
+    main {
+        max-width: 930px;
+        grid-template-columns: minmax(250px, 480px) minmax(250px, 450px);
+        grid-template-rows: auto auto;
+        grid-template-areas: 'form image';
+    }
+
+    .image-wrapper {
+        border-radius: 22px;
+        background-color: red;
+        background-size: cover;
+        background-image: url(../images/illustration-sign-up-desktop.svg);
+        margin: clamp(0.5rem, -8.3188rem + 17vi, 1.5625rem);
+        grid-area: image;
+    }
+
+    .info-wrapper {
+        grid-area: form;
+    }
+
+
+}
