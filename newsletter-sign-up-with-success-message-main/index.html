@@ -13,44 +13,48 @@
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <link rel="stylesheet" href="assets/css/reset.css">
   <link rel="stylesheet" href="assets/css/style.css">
-  <script defer src="assets/js/main.js"></script>
+  <script defer src="assets/js/main.js" type="module"></script>
 </head>
 
 <body>
 
   <main>
-    <section class="image-wrapper"></section>
+    <article class="info">
+      <section class="info__image-wrapper"></section>
 
-    <section class="info-wrapper">
-      <h1>Stay updated!</h1>
+      <section class="info__content-wrapper">
+        <h1>Stay updated!</h1>
 
-      <p>Join 60,000+ product managers receiving monthly updates on:</p>
+        <p>Join 60,000+ product managers receiving monthly updates on:</p>
 
-      <ul class="info__products">
-        <li class="info__products__item">Product discovery and building what matters</li>
-        <li class="info__products__item">Measuring to ensure updates are a success</li>
-        <li class="info__products__item">And much more!</li>
-      </ul>
+        <ul class="info__products">
+          <li class="info__products__item">Product discovery and building what matters</li>
+          <li class="info__products__item">Measuring to ensure updates are a success</li>
+          <li class="info__products__item">And much more!</li>
+        </ul>
 
-      <form action="/" data-form>
-        <label for="email">Email address</label>
-        <div class="email-box">
-          <span class="error-message">Valid email required</span>
-          <input id="email" type="email" name="email" placeholder="email@company.com" class="error-input">
-        </div>
+        <form action="/" data-form>
+          <label for="email">Email address</label>
+          <div class="email-box">
+            <span class="error-message"></span>
+            <!-- <input id="email" type="email" name="email" placeholder="email@company.com" class="error-input"> -->
+            <input id="email" type="email" name="email" placeholder="email@company.com">
+          </div>
 
-        <button type="submit">Subscribe to monthly newsletter</button>
-      </form>
-    </section>
+          <button type="submit" id="btn-subscribe" class="btn">Subscribe to monthly newsletter</button>
+        </form>
+      </section>
+    </article>
 
-    <section class="success-wrapper hidden">
+    <article class="success hidden">
+      <img src="./assets/images/icon-success.svg" alt="Success Icon">
       <h1>Thanks for subscribing!</h1>
 
-      A confirmation email has been sent to ash@loremcompany.com.
-      Please open it and click the button inside to confirm your subscription.
+      <p> A confirmation email has been sent to <strong>ash@loremcompany.com</strong>.
+        Please open it and click the button inside to confirm your subscription.</p>
 
-      Dismiss message
-    </section>
+      <button id="btn-dismiss" class="btn">Dismiss message</button>
+    </article>
   </main>
 </body>
 

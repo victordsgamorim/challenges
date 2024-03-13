@@ -25,39 +25,45 @@ html {
     font-family: var(--font-family);
 }
 
-body{
+body {
     background-color: hsl(var(--charcoal-grey));
     min-height: 100svh;
+    display: grid;
+    place-content: center;
 }
 
-main {
+
+/* INFO */
+.info {
     display: grid;
     grid-template-rows: 284px auto;
     max-width: 480px;
     background-color: white;
+    border-radius: clamp(0px, -11.2676px + 3.0047vi, 32px);
 }
 
-.image-wrapper {
+.info__image-wrapper {
     border-bottom-right-radius: 16px;
     border-bottom-left-radius: 16px;
     background-image: url(../images/illustration-sign-up-mobile.svg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+
 }
 
-.info-wrapper {
-    padding: 2.5rem clamp(1.5rem, -0.2736rem + 7.5676vi, 4.125rem);
+.info__content-wrapper {
+    padding: clamp(2.5rem, 1.2236rem + 5.446vi, 6.125rem) clamp(1.5rem, 0.6637rem + 3.5681vi, 3.875rem);
 }
 
-.info-wrapper h1 {
+.info__content-wrapper h1 {
     font-size: clamp(2.3438rem, 1.7314rem + 2.6126vi, 3.25rem);
     font-weight: bold;
     color: hsl(var(--dark-slate-grey));
     margin-bottom: 1.625rem;
 }
 
-.info-wrapper>p {
+.info__content-wrapper>p {
     color: hsl(var(--charcoal-grey));
     line-height: 1.5;
     margin-bottom: 1.75rem;
@@ -113,11 +119,16 @@ form[data-form] label {
     border-radius: 8px;
     width: 100%;
     box-sizing: border-box;
+    color: hsl(var(--grey));
 }
 
 .email-box input::placeholder {
     font-family: var(--font-family);
     font-size: 1rem;
+}
+
+.email-box input:focus {
+    border: 1px solid hsl(var(--grey));
 }
 
 .error-input {
@@ -135,29 +146,114 @@ form[data-form] label {
     font-weight: bold;
 }
 
-button[type='submit'] {
-    background-color: hsl(var(--dark-slate-grey));
+.btn {
+    background-image: hsl(var(--dark-slate-grey));
+    background: hsl(var(--dark-slate-grey));
     padding: 1.25rem;
     border: 0px solid transparent;
     border-radius: 8px;
     color: hsl(var(--white));
     font-weight: bold;
     font-size: .9375rem;
+    box-shadow: 0 0px 0px hsl(var(--primary-tomato));
+    position: relative;
+    overflow: clip;
+    z-index: 1;
+    transition: box-shadow 350ms, background-image 1s;
 }
 
-.hidden {
+.btn::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(90deg, rgba(252, 83, 115, 255), hsl(var(--primary-tomato)));
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 350ms;
+}
+
+.btn:hover::before {
+    opacity: 1;
+}
+
+.btn:hover {
+    box-shadow: 0 5px 10px hsla(var(--primary-tomato), 0.8);
+}
+
+/* SUCCESS */
+.success {
+    min-height: 100vh;
+    background-color: white;
+    padding: 0 1.25rem;
+    display: grid;
+    place-content: center;
+    position: relative;
+    border-radius: clamp(0rem, -0.7042rem + 3.0047vi, 2rem);
+}
+
+.success img {
+    margin-bottom: 40px;
+}
+
+.success h1 {
+    font-size: clamp(2.3125rem, 1.9054rem + 1.7371vi, 3.4688rem);
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 26px;
+}
+
+.success p {
+    line-height: 1.5;
+}
+
+.success .btn {
+    --padding: 1.25rem;
+    position: absolute;
+    bottom: var(--padding);
+    left: var(--padding);
+    right: var(--padding);
+}
+
+.success strong {
+    color: hsl(var(--dark-slate-grey));
+    font-weight: 700;
+}
+
+article.hidden {
     display: none;
 }
 
+@media (min-width: 500px) {
+    .success {
+        max-width: 500px;
+        padding: clamp(1.25rem, 0.4189rem + 2.6596vi, 2.8125rem) clamp(1.375rem, 0.4287rem + 4.0376vi, 4.0625rem);
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: start;
+        box-sizing: border-box;
+    }
+
+    .success .btn {
+        width: 100%;
+        position: sticky;
+        margin-top: clamp(1.25rem, 0.3856rem + 2.766vi, 2.875rem);
+    }
+}
+
 @media (min-width: 830px) {
-    main {
+    .info {
         max-width: 930px;
         grid-template-columns: minmax(250px, 480px) minmax(250px, 450px);
         grid-template-rows: auto auto;
         grid-template-areas: 'form image';
     }
 
-    .image-wrapper {
+    .info__image-wrapper {
         border-radius: 22px;
         background-color: red;
         background-size: cover;
@@ -166,7 +262,7 @@ button[type='submit'] {
         grid-area: image;
     }
 
-    .info-wrapper {
+    .info__content-wrapper {
         grid-area: form;
     }
 
