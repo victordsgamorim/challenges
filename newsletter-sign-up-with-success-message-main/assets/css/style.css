@@ -255,7 +255,6 @@ article.hidden {
 
     .info__image-wrapper {
         border-radius: 22px;
-        background-color: red;
         background-size: cover;
         background-image: url(../images/illustration-sign-up-desktop.svg);
         margin: clamp(0.5rem, -8.3188rem + 17vi, 1.5625rem);
