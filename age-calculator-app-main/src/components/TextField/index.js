@@ -1,10 +1,10 @@
 import './TextField.css';
 
-const TextField = () => {
+const TextField = (props) => {
     return (
-        <div>
-            <label for='name'>Name</label>
-            <input id='name' />
+        <div className='text-field'>
+            <label for='name'>{props.label}</label>
+            <input id='name' type='text'/>
         </div>
     );
 }

@@ -1,0 +1,28 @@
+.text-field {
+    display: flex;
+    flex-direction: column;
+    max-width: 160px;
+}
+
+.text-field label {
+    font-weight: 700;
+    font-size: clamp(0.75rem, 0.684rem + 0.2817vi, 0.9375rem);
+    letter-spacing: 3px;
+    color: hsl(0, 1%, 44%);
+    text-transform: uppercase;
+    margin-bottom: clamp(0.1875rem, 0.0555rem + 0.5634vi, 0.5625rem);
+}
+
+.text-field input {
+    padding: clamp(0.875rem, 0.831rem + 0.1878vi, 1rem) clamp(0.875rem, 0.6769rem + 0.8451vi, 1.4375rem);
+    border-radius: 10px;
+    border: 1px solid hsl(0, 0%, 86%);
+    font-size: clamp(1.375rem, 1.1549rem + 0.939vi, 2rem);
+    font-weight: 800;
+    color: hsl(0, 0%, 8%);
+    cursor: pointer;
+}
+
+.text-field input:focus {
+    outline: 2px solid hsl(259, 100%, 65%);
+}
