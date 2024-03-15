@@ -21,6 +21,15 @@
     font-weight: 800;
     color: hsl(0, 0%, 8%);
     cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.text-field input::placeholder {
+    color: hsl(0, 0%, 8%);
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
 }
 
 .text-field input:focus {

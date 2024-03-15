@@ -12,8 +12,9 @@
 }
 
 .button div {
-    height: 65px;
-    width: 65px;
+    --circle-size: clamp(65px, 52.6761px + 3.2864vi, 100px);
+    height: var(--circle-size);
+    width: var(--circle-size);
     border-radius: 50%;
     background-color: hsl(259, 100%, 65%);
     display: grid;
@@ -27,8 +28,9 @@
 }
 
 .button div span {
-    height: 25px;
-    width: 25px;
+    --arrow-size: clamp(25px, 16.1972px + 2.3474vi, 50px);
+    height: var(--arrow-size);
+    width: var(--arrow-size);
 }
 
 .button span img {
@@ -37,7 +39,7 @@
     box-sizing: content-box;
 }
 
-@media (min-width: 800px){
+@media (min-width: 700px){
     .button {
         align-items: flex-end;
     }

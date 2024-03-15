@@ -1,0 +1,11 @@
+.card {
+    --radius-regular: 24px;
+    --radius-big: clamp(100px, 64.7887px + 9.3897vi, 200px);
+    width: 100dvw;
+    max-width: 840px;
+    margin: 0 18px;
+    padding: 60px clamp(28px, 16.7324px + 3.0047vi, 60px);
+    background-color: hsl(0, 0%, 100%);
+    box-sizing: border-box;
+    border-radius: var(--radius-regular) var(--radius-regular) var(--radius-big) var(--radius-regular);
+}

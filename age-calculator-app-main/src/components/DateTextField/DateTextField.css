@@ -1,0 +1,5 @@
+.date-form > div {
+    gap: clamp(20px, 15.7746px + 1.1268vi, 32px);
+    margin-bottom: clamp(40px, 53.5211px + -0.939vi, 50px);
+    display: flex;
+}

@@ -1,10 +1,11 @@
-import Button from "./components/Button";
+import AgeCard from "./components/AgeCard";
+import './App.css';
 
 
 function App() {
   return (
-    <div className="App" style={{ margin: "10rem 2rem" }}>
-      <Button />
+    <div className="App">
+      <AgeCard />
     </div>
   );
 }

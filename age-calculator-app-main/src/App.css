@@ -1,0 +1,9 @@
+.App {
+    /* display: grid;
+    place-content: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100svh;
+    background-color: hsl(0, 0%, 94%);
+}

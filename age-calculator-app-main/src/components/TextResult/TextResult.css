@@ -1,0 +1,14 @@
+.text {
+    font-weight: 800;
+    font-size: clamp(3.3125rem, 2.2342rem + 4.6009vi, 6.375rem);
+    font-style: italic;
+    color: hsl(0, 0%, 8%);
+    letter-spacing: clamp(-1px, -1.1761px + 0.0469vi, -0.5px);
+    text-transform: lowercase;
+    margin-top: 0;
+    margin-bottom: clamp(-40px, -17.0141px + -1.5962vi, -23px);
+}
+
+.text strong {
+    color: hsl(259, 100%, 65%);
+}
